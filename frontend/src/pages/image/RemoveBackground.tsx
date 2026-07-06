@@ -35,7 +35,7 @@ const RemoveBackground = () => {
 
       // Dynamically import the heavy ML library only when needed to prevent bundle crashes!
       const imgly = await import('@imgly/background-removal');
-      const removeBg = imgly.default || imgly.removeBackground;
+      const removeBg: any = imgly.default || imgly.removeBackground;
 
       // Run background removal locally in the browser!
       const blob = await removeBg(imageUrl, config);

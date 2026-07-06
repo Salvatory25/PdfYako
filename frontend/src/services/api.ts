@@ -5,7 +5,7 @@ export const uploadAndProcess = async (
   files: File[], 
   onProgress?: (progress: number) => void,
   extraData?: Record<string, string>
-): Promise<{ url: string }> => {
+): Promise<any> => {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     const formData = new FormData();
@@ -31,12 +31,14 @@ export const uploadAndProcess = async (
       if (xhr.status >= 200 && xhr.status < 300) {
         try {
           const response = JSON.parse(xhr.responseText);
-          if (response.success && response.downloadUrl) {
-            // The backend returns a relative URL, we make it absolute for local dev
-            const fullUrl = response.downloadUrl.startsWith('http') 
-              ? response.downloadUrl 
-              : `http://localhost:3001${response.downloadUrl}`;
-            resolve({ url: fullUrl });
+          if (response.success) {
+            let fullUrl = '';
+            if (response.downloadUrl) {
+              fullUrl = response.downloadUrl.startsWith('http') 
+                ? response.downloadUrl 
+                : `http://localhost:3001${response.downloadUrl}`;
+            }
+            resolve({ url: fullUrl, text: response.text, summary: response.summary });
           } else {
             reject(new Error(response.message || 'Processing failed'));
           }

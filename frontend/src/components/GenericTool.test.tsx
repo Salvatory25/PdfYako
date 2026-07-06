@@ -18,7 +18,7 @@ describe('GenericTool Component', () => {
     apiEndpoint: '/api/test'
   };
 
-  const renderComponent = (props = defaultProps) => {
+  const renderComponent = (props: any = defaultProps) => {
     return render(
       <BrowserRouter>
         <GenericTool {...props} />
