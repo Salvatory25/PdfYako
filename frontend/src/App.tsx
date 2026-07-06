@@ -14,7 +14,7 @@ import WatermarkPdf from './pages/pdf/WatermarkPdf.tsx';
 import {
   ScanToPdf,
   PageNumbers,
-  PdfToWord, PdfToExcel, PdfToHtml
+  WordToPdf, PdfToWord, PdfToExcel, PdfToHtml
 } from './pages/pdf/MegaSuite.tsx';
 
 import CompressImage from './pages/image/CompressImage.tsx';
@@ -46,6 +46,7 @@ function AnimatedRoutes() {
         
         <Route path="/tools/page-numbers" element={<PageTransition><PageNumbers /></PageTransition>} />
         
+        <Route path="/tools/word-to-pdf" element={<PageTransition><WordToPdf /></PageTransition>} />
         <Route path="/tools/pdf-to-word" element={<PageTransition><PdfToWord /></PageTransition>} />
         <Route path="/tools/pdf-to-excel" element={<PageTransition><PdfToExcel /></PageTransition>} />
         <Route path="/tools/pdf-to-html" element={<PageTransition><PdfToHtml /></PageTransition>} />

@@ -17,28 +17,25 @@ const categories = [
 ];
 
 const allTools = [
-  // Organize PDF
+  // ⭐ Most Popular
+  { id: 'word-to-pdf', name: 'Word to PDF', path: '/tools/word-to-pdf', icon: FileText, desc: 'Convert your DOC and DOCX files to PDF documents in seconds.', category: 'Convert PDF', color: 'bg-indigo-500' },
+  { id: 'pdf-to-word', name: 'PDF to Word', path: '/tools/pdf-to-word', icon: FileText, desc: 'Easily convert your PDF files into easy to edit DOC and DOCX documents.', category: 'Convert PDF', color: 'bg-blue-600' },
   { id: 'merge-pdf', name: 'Merge PDF', path: '/tools/merge-pdf', icon: Layers, desc: 'Combine PDFs in the order you want with the easiest PDF merger available.', category: 'Organize PDF', color: 'bg-red-500' },
+  { id: 'jpg-to-pdf', name: 'JPG to PDF', path: '/tools/jpg-to-pdf', icon: ImageIcon, desc: 'Convert JPG images to PDF in seconds. Easily adjust orientation and margins.', category: 'Convert PDF', color: 'bg-sky-400' },
   { id: 'split-pdf', name: 'Split PDF', path: '/tools/split-pdf', icon: Scissors, desc: 'Separate one page or a whole set for easy conversion into independent PDF files.', category: 'Organize PDF', color: 'bg-orange-500' },
-  { id: 'rotate-pdf', name: 'Rotate PDF', path: '/tools/rotate-pdf', icon: RotateCw, desc: 'Rotate your PDFs the way you need them. You can even rotate multiple PDFs at once!', category: 'Organize PDF', color: 'bg-orange-600' },
-
-  // Optimize PDF
+  { id: 'compress-image', name: 'Compress Image', path: '/tools/compress-image', icon: ImageIcon, desc: 'Compress JPG, PNG, SVG or GIF with the best quality and compression.', category: 'Image Tools', color: 'bg-yellow-500' },
 
   // Convert PDF
-  { id: 'pdf-to-word', name: 'PDF to Word', path: '/tools/pdf-to-word', icon: FileText, desc: 'Easily convert your PDF files into easy to edit DOC and DOCX documents.', category: 'Convert PDF', color: 'bg-blue-600' },
   { id: 'pdf-to-excel', name: 'PDF to Excel', path: '/tools/pdf-to-excel', icon: FileText, desc: 'Pull data straight from PDFs into Excel spreadsheets in a few short seconds.', category: 'Convert PDF', color: 'bg-emerald-600' },
-  { id: 'jpg-to-pdf', name: 'JPG to PDF', path: '/tools/jpg-to-pdf', icon: ImageIcon, desc: 'Convert JPG images to PDF in seconds. Easily adjust orientation and margins.', category: 'Convert PDF', color: 'bg-sky-400' },
   { id: 'scan-to-pdf', name: 'Scan to PDF', path: '/tools/scan-to-pdf', icon: Maximize, desc: 'Capture document scans from your mobile device and send them instantly to your browser.', category: 'Convert PDF', color: 'bg-indigo-600' },
   { id: 'pdf-to-html', name: 'New! PDF to HTML', path: '/tools/pdf-to-html', icon: Globe, desc: 'Easily turn PDFs into HTML files. Perfect for web display.', category: 'Convert PDF', color: 'bg-slate-700' },
 
-  // Edit PDF
+  // Organize & Edit PDF
+  { id: 'rotate-pdf', name: 'Rotate PDF', path: '/tools/rotate-pdf', icon: RotateCw, desc: 'Rotate your PDFs the way you need them. You can even rotate multiple PDFs at once!', category: 'Organize PDF', color: 'bg-orange-600' },
   { id: 'watermark', name: 'Watermark', path: '/tools/watermark', icon: PenTool, desc: 'Stamp an image or text over your PDF in seconds. Choose typography, transparency.', category: 'Edit PDF', color: 'bg-pink-400' },
   { id: 'page-numbers', name: 'Page numbers', path: '/tools/page-numbers', icon: Hash, desc: 'Add page numbers into PDFs with ease. Choose your positions, dimensions.', category: 'Edit PDF', color: 'bg-pink-600' },
 
-
-
   // Image Tools
-  { id: 'compress-image', name: 'Compress Image', path: '/tools/compress-image', icon: ImageIcon, desc: 'Compress JPG, PNG, SVG or GIF with the best quality and compression.', category: 'Image Tools', color: 'bg-yellow-500' },
   { id: 'convert-image', name: 'Convert Image', path: '/tools/convert-image', icon: ImageIcon, desc: 'Convert pictures in bulk to JPG, PNG, SVG, WEBP, or GIF.', category: 'Image Tools', color: 'bg-yellow-600' },
   { id: 'crop-image', name: 'Crop Image', path: '/tools/crop-image', icon: Crop, desc: 'Crop images online to get the exact pixels you want.', category: 'Image Tools', color: 'bg-yellow-400' },
   { id: 'resize-image', name: 'Resize Image', path: '/tools/resize-image', icon: Maximize, desc: 'Resize JPG, PNG, SVG or GIF by defining new height and width pixels.', category: 'Image Tools', color: 'bg-orange-500' },
