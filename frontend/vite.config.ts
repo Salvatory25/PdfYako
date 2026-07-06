@@ -10,4 +10,24 @@ export default defineConfig({
     globals: true,
     setupFiles: ['./src/setupTests.ts'],
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id: string) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
+              return 'react-vendor';
+            }
+            if (id.includes('framer-motion') || id.includes('lucide-react')) {
+              return 'ui-vendor';
+            }
+            if (id.includes('pdf-lib')) {
+              return 'pdf-vendor';
+            }
+            return 'vendor';
+          }
+        }
+      }
+    }
+  }
 } as any);
