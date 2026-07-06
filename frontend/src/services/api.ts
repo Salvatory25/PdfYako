@@ -1,4 +1,5 @@
-const API_BASE_URL = 'http://localhost:3001/api';
+// Use the environment variable if deployed, otherwise fallback to local backend
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
 
 export const uploadAndProcess = async (
   endpoint: string, 
@@ -34,9 +35,10 @@ export const uploadAndProcess = async (
           if (response.success) {
             let fullUrl = '';
             if (response.downloadUrl) {
+              const baseUrl = API_BASE_URL.replace('/api', '');
               fullUrl = response.downloadUrl.startsWith('http') 
                 ? response.downloadUrl 
-                : `http://localhost:3001${response.downloadUrl}`;
+                : `${baseUrl}${response.downloadUrl}`;
             }
             resolve({ url: fullUrl, text: response.text, summary: response.summary });
           } else {
