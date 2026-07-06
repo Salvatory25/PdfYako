@@ -34,7 +34,9 @@ router.post('/office-to-pdf', upload.array('files', 1), async (req, res) => {
     const newFilename = `office-${uuidv4()}.pdf`;
     const newPath = path.join(outputDir, newFilename);
     
-    const cmd = `/Applications/LibreOffice.app/Contents/MacOS/soffice --headless --convert-to pdf --outdir "${outputDir}" "${file.path}"`;
+    const isMac = process.platform === 'darwin';
+    const sofficePath = isMac ? '/Applications/LibreOffice.app/Contents/MacOS/soffice' : 'libreoffice';
+    const cmd = `${sofficePath} --headless --convert-to pdf --outdir "${outputDir}" "${file.path}"`;
     
     let libreOfficeSucceeded = false;
     try {
