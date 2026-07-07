@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { ArrowLeft, Download, Link as LinkIcon, Type, Wifi, Mail, MessageCircle } from 'lucide-react';
+import { ArrowLeft, Download, Link as LinkIcon, Type, Wifi, Mail, MessageCircle, Smartphone, CheckCircle, Share2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { QRCodeSVG, QRCodeCanvas } from 'qrcode.react';
+import SEO from '../../components/SEO';
 
 type TabType = 'url' | 'text' | 'wifi' | 'email' | 'whatsapp';
 
@@ -97,6 +98,12 @@ const QrGenerator = () => {
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-12 px-4 sm:px-6 lg:px-8">
+      <SEO 
+        title="Free QR Code Generator - Create Custom QR Codes Online" 
+        description="Generate custom QR codes for URLs, WiFi networks, Email, and WhatsApp. Fast, free, and secure QR code creator with no watermarks." 
+        url="https://pdfyako.com/tools/qr"
+        keywords="qr code generator, create qr code, free qr code maker, wifi qr code, url qr code"
+      />
       <div className="max-w-6xl mx-auto">
         <Link to="/" className="inline-flex items-center text-sm font-medium text-slate-500 hover:text-indigo-600 mb-8 transition-colors">
           <ArrowLeft className="h-4 w-4 mr-1" />
@@ -337,6 +344,45 @@ const QrGenerator = () => {
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* SEO Text Content */}
+        <div className="mt-20 max-w-4xl mx-auto text-slate-600 dark:text-slate-400">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">How to Generate Custom QR Codes</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="glass-card p-6 rounded-2xl text-center">
+              <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Type className="h-6 w-6" />
+              </div>
+              <h3 className="font-semibold text-slate-900 dark:text-white mb-2">1. Choose Content Type</h3>
+              <p className="text-sm">Select whether you want to link to a website URL, share a WiFi password, write an email, or send a WhatsApp message.</p>
+            </div>
+            <div className="glass-card p-6 rounded-2xl text-center">
+              <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Share2 className="h-6 w-6" />
+              </div>
+              <h3 className="font-semibold text-slate-900 dark:text-white mb-2">2. Enter Your Details</h3>
+              <p className="text-sm">Type in your information. The live preview will automatically update and generate your custom QR code instantly.</p>
+            </div>
+            <div className="glass-card p-6 rounded-2xl text-center">
+              <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Download className="h-6 w-6" />
+              </div>
+              <h3 className="font-semibold text-slate-900 dark:text-white mb-2">3. Download Code</h3>
+              <p className="text-sm">Customize the colors if you'd like, then download your high-quality QR code in PNG or SVG format.</p>
+            </div>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl mb-8">
+            <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">A Free & Secure QR Code Maker</h2>
+            <p className="mb-4">
+              Pdfyako offers a completely free QR code generator that works directly in your web browser. This means your data (like your WiFi password or personal phone number) never leaves your device and is never sent to our servers.
+            </p>
+            <p>
+              You can use these generated codes anywhere—on business cards, restaurant menus, event posters, or digital presentations. They do not expire and will always work for free.
+            </p>
           </div>
         </div>
       </div>

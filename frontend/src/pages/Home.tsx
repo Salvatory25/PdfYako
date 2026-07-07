@@ -7,6 +7,7 @@ import {
   FileCheck, FileSearch, PenTool, Hash, LayoutGrid, Layers, Maximize, Menu, X
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
+import SEO from '../components/SEO';
 
 const categories = [
   'All',
@@ -61,6 +62,11 @@ const Home = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO 
+        title="Pdfyako - Free Online PDF & Image Tools" 
+        description="Pdfyako is a free online tool suite for editing PDFs, merging PDFs, generating QR codes, compressing images, and much more without watermarks or limitations." 
+        url="https://pdfyako.com/" 
+      />
       {/* Navigation */}
       <nav className="border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">

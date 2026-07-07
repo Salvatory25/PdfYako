@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Layers, Shield, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Dropzone from '../../components/Dropzone';
 import ProcessingState from '../../components/ProcessingState';
 import { uploadAndProcess } from '../../services/api';
+import SEO from '../../components/SEO';
 
 const MergePdf = () => {
   const [files, setFiles] = useState<File[]>([]);
@@ -48,7 +49,13 @@ const MergePdf = () => {
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-3xl mx-auto">
+      <SEO 
+        title="Merge PDF Files Online for Free - Pdfyako" 
+        description="Combine multiple PDF files into a single document seamlessly and securely. No watermarks, no limits, completely free online PDF merger." 
+        url="https://pdfyako.com/tools/merge-pdf"
+        keywords="merge pdf, combine pdf, join pdf, merge pdf free, online pdf merger"
+      />
+      <div className="max-w-4xl mx-auto">
         <Link to="/" className="inline-flex items-center text-sm font-medium text-slate-500 hover:text-indigo-600 mb-8 transition-colors">
           <ArrowLeft className="h-4 w-4 mr-1" />
           Back to Tools
@@ -90,6 +97,47 @@ const MergePdf = () => {
           downloadUrl={downloadUrl}
           onReset={handleReset}
         />
+
+        {/* SEO Text Content */}
+        {status === 'idle' && (
+          <div className="mt-16 text-slate-600 dark:text-slate-400">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">How to Merge PDF Files Online</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              <div className="glass-card p-6 rounded-2xl text-center">
+                <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Layers className="h-6 w-6" />
+                </div>
+                <h3 className="font-semibold text-slate-900 dark:text-white mb-2">1. Select Files</h3>
+                <p className="text-sm">Upload two or more PDF files from your device. You can drag and drop them directly into the upload area.</p>
+              </div>
+              <div className="glass-card p-6 rounded-2xl text-center">
+                <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Zap className="h-6 w-6" />
+                </div>
+                <h3 className="font-semibold text-slate-900 dark:text-white mb-2">2. Merge Instantly</h3>
+                <p className="text-sm">Click the merge button. Our cloud servers will combine your documents in a matter of seconds.</p>
+              </div>
+              <div className="glass-card p-6 rounded-2xl text-center">
+                <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Shield className="h-6 w-6" />
+                </div>
+                <h3 className="font-semibold text-slate-900 dark:text-white mb-2">3. Download Safely</h3>
+                <p className="text-sm">Download your merged PDF. All uploaded files are automatically deleted from our servers for your privacy.</p>
+              </div>
+            </div>
+
+            <div className="glass-card p-8 rounded-2xl">
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">The Best Free PDF Merger</h2>
+              <p className="mb-4">
+                Pdfyako provides a seamless, fast, and secure way to combine PDF files online. Whether you are merging invoices, assembling a report, or organizing personal documents, our tool is designed to be the easiest PDF merger available.
+              </p>
+              <p>
+                There are absolutely no watermarks, no file size limits, and no registration required. Your privacy is our top priority, which is why all files are permanently deleted from our servers immediately after processing.
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
