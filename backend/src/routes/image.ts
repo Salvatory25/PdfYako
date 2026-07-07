@@ -10,7 +10,19 @@ const storage = multer.diskStorage({
   destination: (req, file, cb) => cb(null, path.join(__dirname, '../../uploads')),
   filename: (req, file, cb) => cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
 });
-const upload = multer({ storage, limits: { fileSize: 50 * 1024 * 1024 } });
+const upload = multer({ 
+  storage, 
+  limits: { fileSize: 50 * 1024 * 1024 },
+  fileFilter: (req, file, cb) => {
+    // Strictly allow only common image formats
+    const allowedMimeTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/bmp'];
+    if (allowedMimeTypes.includes(file.mimetype)) {
+      cb(null, true);
+    } else {
+      cb(new Error(`Invalid file type: ${file.mimetype}. Only images are allowed.`));
+    }
+  }
+});
 const cleanup = async (filePath: string) => { try { await fs.unlink(filePath); } catch (e) {} };
 const scheduleCleanup = (filePath: string) => setTimeout(() => cleanup(filePath), 60 * 60 * 1000);
 
