@@ -3,6 +3,7 @@ import { ArrowLeft, Download, Link as LinkIcon, Type, Wifi, Mail, MessageCircle,
 import { Link } from 'react-router-dom';
 import { QRCodeSVG, QRCodeCanvas } from 'qrcode.react';
 import SEO from '../../components/SEO';
+import AdBanner from '../../components/AdBanner';
 
 type TabType = 'url' | 'text' | 'wifi' | 'email' | 'whatsapp';
 
@@ -346,6 +347,9 @@ const QrGenerator = () => {
             </div>
           </div>
         </div>
+
+        {/* Ad Placement */}
+        <AdBanner slot="qr-generator-bottom" />
 
         {/* SEO Text Content */}
         <div className="mt-20 max-w-4xl mx-auto text-slate-600 dark:text-slate-400">

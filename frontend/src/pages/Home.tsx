@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import SEO from '../components/SEO';
+import AdBanner from '../components/AdBanner';
 
 const categories = [
   'All',
@@ -162,6 +163,11 @@ const Home = () => {
             />
           </div>
         </section>
+
+        {/* Ad Placement */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
+          <AdBanner slot="home-hero-bottom" />
+        </div>
 
         {/* Tools Section */}
         <section className="py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto" id="pdf-tools">

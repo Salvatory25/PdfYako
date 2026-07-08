@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, Download, ScanLine } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import bwipjs from 'bwip-js';
+import AdBanner from '../../components/AdBanner';
 
 type BarcodeType = 'code128' | 'ean13' | 'upca' | 'code39';
 
@@ -207,6 +208,9 @@ const BarcodeGenerator = () => {
             </div>
           </div>
         </div>
+
+        {/* Ad Placement */}
+        <AdBanner slot="barcode-generator-bottom" />
       </div>
     </div>
   );

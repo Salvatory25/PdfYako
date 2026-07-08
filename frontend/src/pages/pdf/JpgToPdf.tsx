@@ -5,6 +5,7 @@ import Dropzone from '../../components/Dropzone';
 import ProcessingState from '../../components/ProcessingState';
 import { uploadAndProcess } from '../../services/api';
 import SEO from '../../components/SEO';
+import AdBanner from '../../components/AdBanner';
 
 const JpgToPdf = () => {
   const [files, setFiles] = useState<File[]>([]);
@@ -97,6 +98,9 @@ const JpgToPdf = () => {
           downloadUrl={downloadUrl}
           onReset={handleReset}
         />
+
+        {/* Ad Placement */}
+        <AdBanner slot="jpg-to-pdf-bottom" />
 
         {/* SEO Text Content */}
         {status === 'idle' && (

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Dropzone from './Dropzone';
 import ProcessingState from './ProcessingState';
 import { uploadAndProcess } from '../services/api';
+import AdBanner from './AdBanner';
 
 interface GenericToolProps {
   title: string;
@@ -166,6 +167,9 @@ const GenericTool: React.FC<GenericToolProps> = ({
             </button>
           </div>
         )}
+
+        {/* Ad Placement */}
+        <AdBanner slot="generic-tool-bottom" />
       </div>
     </div>
   );

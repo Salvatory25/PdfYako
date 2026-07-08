@@ -5,6 +5,7 @@ import Dropzone from '../../components/Dropzone';
 import ProcessingState from '../../components/ProcessingState';
 import { uploadAndProcess } from '../../services/api';
 import SEO from '../../components/SEO';
+import AdBanner from '../../components/AdBanner';
 
 const MergePdf = () => {
   const [files, setFiles] = useState<File[]>([]);
@@ -97,6 +98,9 @@ const MergePdf = () => {
           downloadUrl={downloadUrl}
           onReset={handleReset}
         />
+
+        {/* Ad Placement */}
+        <AdBanner slot="merge-pdf-bottom" />
 
         {/* SEO Text Content */}
         {status === 'idle' && (
