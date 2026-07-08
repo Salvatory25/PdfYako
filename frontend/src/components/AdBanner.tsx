@@ -14,7 +14,7 @@ const AdBanner: React.FC<AdBannerProps> = ({
   // GOOGLE ADSENSE CONFIGURATION
   // Once approved by Google AdSense, set this to true and populate your client ID below.
   const IS_ADSENSE_ACTIVE = false;
-  const GOOGLE_CLIENT_ID = 'ca-pub-XXXXXXXXXXXXXXXX'; // Replace with your Google Publisher ID
+  const GOOGLE_CLIENT_ID = 'ca-pub-7163685583800302'; // Replace with your Google Publisher ID
 
   if (IS_ADSENSE_ACTIVE) {
     return (
